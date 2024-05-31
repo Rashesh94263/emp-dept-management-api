@@ -4,6 +4,12 @@ target/
 !**/src/main/**/target/
 !**/src/test/**/target/
 
+# Maven wrapper
+mvnw
+mvnw.cmd
+.mvn/
+
+
 # Ignore specific IDE directories and files
 
 ### Spring Tool Suite (STS) ###
