@@ -1,5 +1,5 @@
 package com.example.employment_department_CURD_restful_services.service;
-
+// Imports for DTO, model, repository, mapper, and exceptions
 import com.example.employment_department_CURD_restful_services.Mapper.EmployeeMapper;
 import com.example.employment_department_CURD_restful_services.dto.EmployeeDto;
 import com.example.employment_department_CURD_restful_services.exception.EmployeeNotFoundException;
@@ -24,7 +24,6 @@ public class EmployeeService {
 
     /**
      * Create a new employee record.
-     * @return the saved employee.
      */
     public EmployeeDto createEmployeeRecord(EmployeeDto employeeDto) {
 
@@ -45,8 +44,6 @@ public class EmployeeService {
 
     /**
      * Update an existing employee record
-     * @param employeeId The ID of the employee to be updated
-     * @return  The updated employee
      */
     public EmployeeDto updateEmployeeRecord(EmployeeDto employeeDto, Long employeeId){
 
@@ -63,8 +60,6 @@ public class EmployeeService {
 
     /**
      * Retrieve an employee by their ID.
-     * @param employeeId The ID of the employee to retrieve.
-     * @return The employee with the specified ID.
      */
     public EmployeeDto getEmployeeByID(Long employeeId){
 
@@ -76,8 +71,6 @@ public class EmployeeService {
 
     /**
      * Delete an employee record by their ID.
-     * @param employeeId The ID of the employee to delete.
-     * @return True if the deletion was successful, false otherwise.
      */
     public void deleteEmployeeRecord(Long employeeId){
         try{
@@ -90,7 +83,6 @@ public class EmployeeService {
 
     /**
     * Retrieve details of all employees
-    * @return  A list of all employees.
     */
     public List<EmployeeDto> findAllEmployees(){
 

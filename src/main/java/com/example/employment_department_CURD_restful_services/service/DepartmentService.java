@@ -1,5 +1,7 @@
 package com.example.employment_department_CURD_restful_services.service;
 
+// Imports for DTO, model, repository, mapper, exceptions, and Spring utilities
+
 import com.example.employment_department_CURD_restful_services.Mapper.DepartmentMapper;
 import com.example.employment_department_CURD_restful_services.dto.DepartmentDto;
 import com.example.employment_department_CURD_restful_services.exception.DepartmentNotFoundException;
@@ -13,13 +15,18 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
+
+/**
+ * Service layer responsible for handling business logic related to department operations.
+ */
 @Service
 public class DepartmentService {
 
+    // Injected repository for database interactions.
     @Autowired
     private DepartmentRepository departmentRepository;
 
-    // Convert DepartmentDto to the department to save details of the departments in the departmentRepository
+    // Create a new department
     public DepartmentDto  createDepartment(DepartmentDto departmentDto){
 
         Department department = DepartmentMapper.toEntity(departmentDto);
@@ -35,6 +42,7 @@ public class DepartmentService {
 
     }
 
+    // Update an existing department by ID
     public DepartmentDto  updateDepartment(DepartmentDto departmentDto, Long id){
 
         try{
@@ -60,6 +68,7 @@ public class DepartmentService {
     }
 
 
+    // Get a department by ID
     public DepartmentDto getDepatmentById(Long id){
 
         Department department = departmentRepository.findById(id)
@@ -70,6 +79,7 @@ public class DepartmentService {
 
     }
 
+    // Get all departments
     public List<DepartmentDto> getAllDepartment(){
 
         try{
@@ -90,6 +100,7 @@ public class DepartmentService {
 
     }
 
+    // Delete a department by ID
     public void deleteDepartment(Long id) {
 
         try{
